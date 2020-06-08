@@ -20,6 +20,9 @@
     ]
   },
   "angularCompilerOptions": {
+    // ERROR in Tried to overwrite C:/softwall/VSCode/wangyiyunMusic/node_modules/ng-zorro-antd/back-top/back-top.component.d.ts.__ivy_ngcc_bak with an ngcc back up file, which is disallowed.
+    // 发生以上报错时，添加：enableIvy: false
+    "enableIvy": false,
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
   }
