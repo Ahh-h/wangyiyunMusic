@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { ShareModule } from '../share/share.module';
+import { HomeModule } from './home/home.module';
 
 
 // 用来管理所有的页面模块，只用把share模块引用进来就行了
@@ -7,7 +8,11 @@ import { ShareModule } from '../share/share.module';
 @NgModule({
   declarations: [],
   imports: [
-    ShareModule
+    HomeModule
+  ],
+  exports: [
+    HomeModule
+
   ]
 })
 export class PagesModule { }
