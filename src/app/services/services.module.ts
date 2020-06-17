@@ -11,7 +11,7 @@ export const API_CONFIG = new InjectionToken('ApiConfigToken');
   ],
   providers: [
     // 可以直接在provide后面写一个字符串，但是可读性不好
-    { provide: API_CONFIG, useValue: 'http://localhost:3000' }
+    { provide: API_CONFIG, useValue: 'http://localhost:3000/' }
   ]
 })
 export class ServicesModule { }

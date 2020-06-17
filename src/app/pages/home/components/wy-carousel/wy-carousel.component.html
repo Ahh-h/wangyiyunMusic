@@ -1,0 +1,12 @@
+<!-- 用这个组件把原声的ng-zorro 轮播图组件包起来 -->
+<div class="carousel">
+    <div class="wrap">
+        <!-- 轮播图左右需要加上箭头 -->
+        <i nz-icon class="arrow left" nzType="left" nzTheme="outline" (click)="onSildeChange('pre')"></i>
+        <ng-content></ng-content>
+        <ng-template #dot let-number>
+            <i class="dot" [class.active] = "number === activeIndex"></i>
+        </ng-template>
+        <i nz-icon class="arrow right" nzType="right" nzTheme="outline" (click)="onSildeChange('next')"></i>
+    </div>
+</div>

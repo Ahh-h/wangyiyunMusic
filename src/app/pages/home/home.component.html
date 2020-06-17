@@ -1,23 +1,58 @@
 <div class="home">
-    <div class="carousel wrap">
-        <nz-carousel nzAutoPlay nzEffect="fade">
+    <!-- 组件里面嵌套轮播图，用ng-content作为占位符并展示嵌套的轮播图 -->
+    <app-wy-carousel
+    #wyCarousel 
+    [activeIndex] = "carouselActiveIndex" 
+    (slideChange)= "onChangeSlide($event)"
+    >
+        <nz-carousel 
+        nzAutoPlay 
+        nzEffect="fade" 
+        [nzDotRender]="wyCarousel.dotRef"
+        (nzBeforeChange)="onBeforeChange($event)"
+        >
             <div class="carousel-item" nz-carousel-content *ngFor="let item of banners">
                 <a [href]="item.url" target="_blank" class="banner-item">
                     <img [src]="item.imageUrl" alt="carousel" />
                 </a>
             </div>
         </nz-carousel>
-    </div>
-</div>
+    </app-wy-carousel>
 
-<!-- <div class="home">
-    <div class="carousel wrap">
-      <nz-carousel nzAutoPlay nzEffect="fade">
-        <div class="carousel-item" nz-carousel-content *ngFor="let item of banners">
-          <a [href]="item.url" target="_blank" class="banner-item">
-            <img [src]="item.imageUrl" />
-          </a>
-        </div>
-      </nz-carousel>
-    </div>
-  </div> -->
+    <div class="main">
+      <div class="wrap">
+          <div class="left">
+              <div class="sec">
+                  <div class="up">
+                    <div class="navs">
+                      <h2>
+                        <i></i>
+                        <a>热门推荐</a>
+                      </h2>
+                      <nav>
+                        <a *ngFor="let tag of hotTags">{{tag.name}}</a>
+                      </nav>
+                    </div>
+                    <a>
+                      更多
+                      <i nz-icon type="arrow-right" theme="outline"></i>
+                    </a>
+                  </div>
+                  <div class="down">
+                    <div class="down-wrap">
+                      <app-single-sheet 
+                        class="sheet-item"
+                        *ngFor="let item of songSheetList"
+                        [sheet]="item"
+                      >
+                    </app-single-sheet>
+                    </div>
+                  </div>
+              </div>
+          </div>
+          <div class="right">
+            
+          </div>
+      </div>
+  </div>
+</div>
