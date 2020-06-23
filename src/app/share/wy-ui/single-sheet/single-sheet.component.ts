@@ -13,7 +13,6 @@ export class SingleSheetComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log("dsfs", this.sheet);
   }
 
 }
